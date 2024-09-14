@@ -27,45 +27,7 @@ python rsa_example.py
 
 The script will:
 
-Print the original message.
-Encrypt the message and print the encrypted value.
-Decrypt the message and print the decrypted value.
-Functions
-rsa_generate_Kpub(p, q)
-Description: Generates the public key (e, n) from two prime numbers p and q.
-Parameters:
-p (int): First prime number.
-q (int): Second prime number.
-Returns: The public key components e and n.
-rsa_generate_Kpriv(e, n)
-Description: Generates possible private keys d using the public key (e, n).
-Parameters:
-e (int): Public key exponent.
-n (int): Modulus from p * q.
-Returns: A list of possible values for d.
-rsa_encrypt(m, e, n)
-Description: Encrypts a message m using the public key (e, n).
-Parameters:
-m (int): The original message.
-e (int): Public key exponent.
-n (int): Modulus from p * q.
-Returns: The encrypted message C.
-rsa_decrypt(c, d, n)
-Description: Decrypts a ciphertext C using the private key d and modulus n.
-Parameters:
-C (int): The encrypted message (ciphertext).
-d (int): Private key exponent.
-n (int): Modulus from p * q.
-Returns: The original message M.
-
-Example
-The following shows a basic example of the RSA process using the script:
-p = 2
-q = 7
-n = p * q
-e = 5
-d = 11
-msg = 5
+Print the original message, encrypt the message, and print the encrypted value, followed by decrypting the message and printing the decrypted value. The function rsa_generate_Kpub(p, q) generates the public key (e, n) from two prime numbers p and q. The parameters for this function include p (the first prime number) and q (the second prime number), and it returns the public key components e and n. The function rsa_generate_Kpriv(e, n) generates possible private keys d using the public key (e, n). The parameters for this function are e (the public key exponent) and n (the modulus, calculated as p * q), and it returns a list of possible values for d. The function rsa_encrypt(m, e, n) encrypts a message m using the public key (e, n). The parameters for this function are m (the original message), e (the public key exponent), and n (the modulus from p * q), and it returns the encrypted message C. The function rsa_decrypt(c, d, n) decrypts a ciphertext C using the private key d and modulus n. The parameters for this function include C (the encrypted message or ciphertext), d (the private key exponent), and n (the modulus from p * q), and it returns the original message M. For example, the following shows a basic example of the RSA process using the script: p = 2, q = 7, n = p * q, e = 5, d = 11, and msg = 5.
 
 # Encrypt message
 C = rsa_encrypt(msg, e, n)
